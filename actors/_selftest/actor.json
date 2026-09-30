@@ -1,0 +1,2 @@
+{"name":"_selftest","title":"selftest","description":"Used by selftest.py only","timeout_sec":3,"memory":"128m","secrets":["SELFTEST_SECRET"],
+ "input_schema":{"sleep":{"type":"integer","label":"sleep","default":0},"fail":{"type":"integer","label":"fail","default":0}}}

@@ -1,0 +1,2 @@
+{"name":"reddit-scraper","title":"Reddit Scraper","icon":"🟠","description":"Subreddit posts or all comments of one thread (public JSON).","timeout_sec":600,"memory":"512m","secrets":[],
+ "input_schema":{"subreddit":{"type":"string","label":"Subreddit (no r/)","default":"python"},"thread_url":{"type":"string","label":"…or thread URL (overrides subreddit)","default":""},"max_items":{"type":"integer","label":"Max items","default":50}}}

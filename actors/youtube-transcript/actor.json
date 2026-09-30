@@ -1,0 +1,2 @@
+{"name":"youtube-transcript","title":"YouTube Transcript Downloader","icon":"▶️","description":"Transcripts for a list of videos, one row per video.","timeout_sec":900,"memory":"512m","secrets":[],
+ "input_schema":{"urls":{"type":"text","label":"Video URLs (one per line)","default":"","required":true},"languages":{"type":"string","label":"Languages (priority order)","default":"en,hi,ur"}}}
