@@ -1,0 +1,2 @@
+{"name":"research-pipeline","title":"Free Research Aggregator","icon":"🔎","description":"Topic -> Reddit, Hacker News, arXiv, GitHub, StackOverflow, Dev.to, Lobsters, news and RSS in one ranked list.","timeout_sec":1500,"memory":"1g","secrets":[],
+ "input_schema":{"topic":{"type":"string","label":"Topic","default":"","required":true},"skip":{"type":"string","label":"Skip sources (comma list: reddit,hn,arxiv,github,so,devto,lobsters,medium,news,rss…)","default":""},"niche_only":{"type":"integer","label":"Niche subreddits only (1/0)","default":0}}}

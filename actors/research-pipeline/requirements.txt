@@ -1,0 +1,4 @@
+curl_cffi
+feedparser
+beautifulsoup4
+requests

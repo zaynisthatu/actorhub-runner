@@ -1,0 +1,84 @@
+{
+  "_comment": "Curated niche -> subreddits + keyword hints. Used by the pipeline to auto-detect which niche(s) a topic belongs to, then add that niche's subreddits as EXTRA Reddit search targets (in addition to the normal site-wide search.json call) and use the keyword hints to help build a reworded retry query if a source returns 0 results.",
+
+  "ai_ml": {
+    "match_keywords": ["ai", "chatbot", "llm", "machine learning", "ml", "gpt", "claude", "gemini", "neural network", "deep learning", "artificial intelligence", "chatgpt", "openai", "anthropic", "transformer", "diffusion model", "agent", "rag", "embedding"],
+    "subreddits": [
+      "artificial", "MachineLearning", "LocalLLaMA", "ChatGPT", "OpenAI",
+      "ClaudeAI", "singularity", "ArtificialInteligence", "deeplearning",
+      "MLQuestions", "learnmachinelearning", "computervision", "NLP",
+      "StableDiffusion", "AIDungeon", "GPT3", "languagetechnology",
+      "datascience", "agi", "AIArt", "PromptEngineering", "LLMDevs"
+    ]
+  },
+
+  "devops_swe": {
+    "match_keywords": ["devops", "ci/cd", "kubernetes", "docker", "infrastructure", "sre", "cloud", "deployment", "programming", "developer", "coding", "software engineer", "backend", "frontend", "api", "github", "open source"],
+    "subreddits": [
+      "devops", "kubernetes", "docker", "sysadmin", "programming",
+      "ExperiencedDevs", "softwarearchitecture", "aws", "googlecloud",
+      "AZURE", "Terraform", "selfhosted", "webdev", "node",
+      "golang", "rust", "Python", "javascript", "github",
+      "ProgrammerHumor", "cscareerquestions", "SoftwareEngineering"
+    ]
+  },
+
+  "finance_macro": {
+    "match_keywords": ["economy", "economic", "inflation", "recession", "gdp", "federal reserve", "interest rate", "macro", "unemployment", "fiscal", "monetary policy"],
+    "subreddits": [
+      "Economics", "economy", "MacroEconomics", "finance",
+      "AskEconomics", "EconMonitor", "GlobalMarkets", "centralbanking"
+    ]
+  },
+
+  "fintech_markets": {
+    "match_keywords": ["fintech", "stock market", "trading", "investing", "stocks", "crypto", "bitcoin", "blockchain", "defi", "payments", "banking app", "neobank", "wall street", "hedge fund"],
+    "subreddits": [
+      "fintech", "wallstreetbets", "stocks", "investing", "StockMarket",
+      "options", "SecurityAnalysis", "ValueInvesting", "CryptoCurrency",
+      "Bitcoin", "ethereum", "defi", "CryptoMarkets", "algotrading",
+      "quant", "PersonalFinance", "FinancialIndependence"
+    ]
+  },
+
+  "startups_business": {
+    "match_keywords": ["startup", "founder", "venture capital", "vc", "saas", "entrepreneur", "business model", "product launch", "bootstrapped", "yc", "y combinator", "pitch deck"],
+    "subreddits": [
+      "startups", "Entrepreneur", "SaaS", "venturecapital",
+      "smallbusiness", "EntrepreneurRideAlong", "indiehackers",
+      "growmybusiness", "ycombinator", "microsaas"
+    ]
+  },
+
+  "tech_general": {
+    "match_keywords": ["tech", "technology", "gadget", "smartphone", "apple", "google", "microsoft", "tech news", "silicon valley", "big tech"],
+    "subreddits": [
+      "technology", "tech", "gadgets", "apple", "google", "android",
+      "hardware", "techsupport", "Futurology", "BuyItForLife"
+    ]
+  },
+
+  "world_news_politics": {
+    "match_keywords": ["election", "politics", "government", "policy", "war", "geopolitics", "regulation", "law", "congress", "president", "international relations"],
+    "subreddits": [
+      "worldnews", "news", "politics", "geopolitics", "PoliticalDiscussion",
+      "Conservative", "neoliberal", "moderatepolitics", "AskAPolitician"
+    ]
+  },
+
+  "career_jobs": {
+    "match_keywords": ["job", "career", "hiring", "layoff", "salary", "interview", "resume", "remote work", "workplace"],
+    "subreddits": [
+      "jobs", "careerguidance", "antiwork", "WorkReform", "ITCareerQuestions",
+      "cscareerquestions", "recruitinghell", "overemployed"
+    ]
+  },
+
+  "consumer_social": {
+    "match_keywords": ["social media", "influencer", "viral", "tiktok", "instagram", "twitter", "going viral", "internet culture"],
+    "subreddits": [
+      "OutOfTheLoop", "AskReddit", "TrueOffMyChest", "socialmedia",
+      "InternetIsBeautiful", "apps"
+    ]
+  }
+}
