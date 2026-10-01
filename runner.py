@@ -13,8 +13,8 @@ def load_secrets():
 def _docker(args, logf, check=False):
     return subprocess.run(["docker", *args], stdout=logf, stderr=subprocess.STDOUT, check=check)
 
-def ensure_images(name, logf):
-    for img, ctx in (("actorhub/py-base", ROOT / "base/py-base"), (f"actorhub/{name}", ROOT / "actors" / name)):
+def ensure_images(name, base, logf):
+    for img, ctx in ((f"actorhub/{base}", ROOT / "base" / base), (f"actorhub/{name}", ROOT / "actors" / name)):
         if _docker(["image", "inspect", img], subprocess.DEVNULL).returncode != 0:
             logf.write(f"[hub] building {img}\n".encode()); logf.flush(); _docker(["build", "-t", img, str(ctx)], logf, check=True)
 
@@ -25,7 +25,7 @@ def run(name, meta, run_dir, backend):
     with open(run_dir / "run.log", "ab") as lf:
         cname = f"ah-{run_dir.name}"
         if backend == "docker":
-            ensure_images(name, lf)
+            ensure_images(name, meta.get("base", "py-base"), lf)
             cmd = ["docker", "run", "--rm", "--name", cname, "--memory", meta.get("memory", "512m"), "--cpus", "1",
                    "--user", f"{os.getuid()}:{os.getgid()}", "-v", f"{run_dir.resolve()}:/data", *[x for k in declared for x in ("-e", k)], f"actorhub/{name}"]
             cwd = None
