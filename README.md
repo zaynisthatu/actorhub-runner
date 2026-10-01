@@ -16,6 +16,9 @@ An Apify-style actor runner. Each scraper or data tool is an **actor**, a folder
 |---|---|
 | `reddit-scraper` | Posts from a subreddit, or all comments of one thread, from Reddit's public JSON |
 | `youtube-transcript` | Transcripts for a list of YouTube videos with a language priority list, one row per video |
+| `ytdlp-info` | Title, uploader, duration, views and date for URLs supported by yt-dlp; nothing is downloaded |
+| `gallerydl-info` | Media file URLs and metadata for sites supported by gallery-dl; nothing is downloaded |
+| `research-pipeline` | One topic searched across Reddit, Hacker News, arXiv, GitHub, StackOverflow, Dev.to, Lobsters, Google News, Medium, DuckDuckGo and RSS feeds, merged into one ranked list |
 
 ## Run it
 
@@ -29,4 +32,5 @@ Requires Python 3 and the Docker CLI.
 
 ## Verification
 
-`python selftest.py --backend docker|process` starts the API and checks a successful run, declared and undeclared secrets, dataset and log capture, a failing actor, the timeout kill, cleanup after a timeout, an unknown actor (404), missing input (422), path traversal on run ids (404) and the failure path of `youtube-transcript`.
+- `python selftest.py --backend docker|process` starts the API and runs 13 checks: a successful run, declared and undeclared secrets, dataset and log capture, a failing actor, the timeout kill, cleanup after a timeout, an unknown actor (404), missing input (422), path traversal on run ids (404) and the failure paths of `youtube-transcript`, `ytdlp-info` and `gallerydl-info`.
+- `python tests_actors.py` runs offline parser tests for `ytdlp-info`, `gallerydl-info` and the Reddit comment tree.
