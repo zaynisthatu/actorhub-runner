@@ -39,6 +39,10 @@ try:
     check("path traversal on run id -> 404", call("/api/runs/..%2F..%2Fetc")[0] == 404)
     r, _ = go("youtube-transcript", {"urls": "not a url"})
     check("real actor: all-rows-failed -> FAILED (not fake success)", r["status"] == "FAILED" and r["exit_code"] == 1, r["status"])
+    r, _ = go("ytdlp-info", {"urls": "not a url"})
+    check("ytdlp-info: unextractable URL -> FAILED (not fake success)", r["status"] == "FAILED" and r["exit_code"] == 1, r["status"])
+    r, _ = go("gallerydl-info", {"url": "not a url"})
+    check("gallerydl-info: unsupported URL -> FAILED", r["status"] == "FAILED" and r["exit_code"] == 1, r["status"])
 finally:
     srv.terminate()
 print(f"\n{sum(res)}/{len(res)} passed on backend={a.backend}"); sys.exit(0 if all(res) else 1)
