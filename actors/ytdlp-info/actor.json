@@ -1,0 +1,2 @@
+{"name":"ytdlp-info","title":"yt-dlp Link & Metadata Extractor","icon":"🎞️","description":"No-login metadata for YouTube and the other sites yt-dlp supports. Playlists are listed flat; nothing is downloaded.","timeout_sec":900,"memory":"512m","secrets":[],
+ "input_schema":{"urls":{"type":"text","label":"URLs (one per line)","default":"","required":true},"max_items":{"type":"integer","label":"Max entries per URL","default":50}}}

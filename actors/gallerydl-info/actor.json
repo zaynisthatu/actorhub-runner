@@ -1,0 +1,2 @@
+{"name":"gallerydl-info","title":"gallery-dl Media URL Extractor","icon":"🖼️","description":"Lists media file URLs and metadata (no download) for the gallery sites gallery-dl supports, such as Pinterest and Reddit.","timeout_sec":900,"memory":"512m","secrets":[],
+ "input_schema":{"url":{"type":"string","label":"Page / profile / board URL","default":"","required":true},"max_items":{"type":"integer","label":"Max files","default":50}}}
